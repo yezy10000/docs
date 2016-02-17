@@ -27,6 +27,7 @@ docs:
     qrcode: qrcode.html
     short_url: short-url.html
     semantic: semantic.html
+    reply: reply.html
   customization:
     errors: errors.html
     cache: cache.html

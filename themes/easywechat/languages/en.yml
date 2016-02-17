@@ -55,4 +55,5 @@ sidebar:
     qrcode: Qrcode
     short_url: Short Url
     semantic: Semantic
+    reply: Auto Reply
     errors: Errors
