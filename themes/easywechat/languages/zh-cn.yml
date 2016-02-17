@@ -24,6 +24,7 @@ sidebar:
     overview: 概述
     setup: 入门
     installation: 安装
+    integration: 在框架中使用
     releases: 更新日志
     roadmap: 路线图
     accounts: 账号接入

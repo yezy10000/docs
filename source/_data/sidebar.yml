@@ -5,6 +5,7 @@ docs:
     installation: installation.html
     tutorial: tutorial.html
     configuration: configuration.html
+    integration: integration.html
   basic_usage:
     server: server.html
     messages: messages.html
