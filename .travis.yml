@@ -14,7 +14,10 @@ addons:
       - graphicsmagick
 
 env:
-  - CXX=g++-4.8
+  matrix:
+    - CXX=g++-4.8
+  global:
+    secure: jkBsiuXo9CUfMOaEM7QwYNVXPckLlJPxgkjV3iRpMl9vFZYIezeOrnUIkfEAXDdzgqqIMzCpva9FCcPsF6uBdmr7iys2lTPncS+82MH4ABo+4x93dWxQiKsqYy4fRVwMOiUgwiu3dPK/v8G2G2Z1NTTgCGxrRex8uSV
 
 addons:
   apt:
