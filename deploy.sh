@@ -15,4 +15,4 @@ curl -s -X POST \
   -H "Travis-API-Version: 3" \
   -H "Authorization: token ${ACCESS_TOKEN}" \
   -d "$body" \
-  https://api.travis-ci.org/repo/EasyWeChat%2Fsite/requests
+  https://api.travis-ci.org/repo/meolu/site/requests

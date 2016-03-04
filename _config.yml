@@ -12,7 +12,7 @@ timezone: PRC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://easywechat.org
+url: https://walle-web.io
 root: /
 
 permalink: news/:year/:month/:day/:title/
@@ -32,6 +32,6 @@ theme: easywechat
 
 swiftype_key: URYXMYgtQuEhNHNY8d-F
 google_analytics: UA-64156348-1
-github: overtrue/wechat
-twitter: anzhengchao
-weibo: 44294631
+github: meolu/walle-web
+twitter: wushuiyong
+861459320: 44294631

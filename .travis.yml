@@ -26,16 +26,16 @@ addons:
 
 before_install:
   # Set Git config
-  - git config --global user.name "overtrue"
-  - git config --global user.email "anzhengchao@gmail.com"
+  - git config --global user.name "meolu"
+  - git config --global user.email "wushuiyong@huamanshu.com"
   - git config --global push.default simple
 
 script:
   # Clone the repository
-  - git clone https://${GH_TOKEN}@github.com/easywechat/easywechat.github.io.git .deploy_git -v
+  - git clone https://${GH_TOKEN}@github.com/meolu/walle-web.io.git .deploy_git -v
   # Update docs.
   - git --version
-  - git remote add -f docs https://${GH_TOKEN}@github.com/easywechat/docs.git
+  - git remote add -f docs https://${GH_TOKEN}@github.com/meolu/doc.git
   - git fetch docs
   - git subtree add --prefix=source/docs/en docs/en --squash
   - git subtree add --prefix=source/docs/zh-cn docs/zh-cn --squash
