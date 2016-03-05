@@ -37,11 +37,12 @@ script:
   - git clone https://${GH_TOKEN}@github.com/meolu/walle-web.io.git .deploy_git -v
   # Update docs.
   - git --version
-  - git remote add -f docs https://${GH_TOKEN}@github.com/meolu/doc.git
-  - git fetch docs
-  - git subtree add --prefix=source/docs/en docs/en --squash
-  - git subtree add --prefix=source/docs/zh-cn docs/zh-cn --squash
+  # - git remote add -f docs https://${GH_TOKEN}@github.com/meolu/doc.git
+  # - git fetch docs
+  # - git subtree add --prefix=source/docs/en docs/en --squash
+  # - git subtree add --prefix=source/docs/zh-cn docs/zh-cn --squash
   # Install dependencies
+  - mv walle-web.io/* source/
   - npm install --no-optional
 
 after_script:
