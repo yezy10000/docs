@@ -47,6 +47,7 @@ script:
 
 after_script:
   - hexo generate && gulp
+  - cp -rf public/docs/zh-cn/* public/docs/
   - cp -rf public/* .deploy_git/
   - cd .deploy_git
   - git rm -r *
