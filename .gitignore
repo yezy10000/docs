@@ -3,6 +3,8 @@ Thumbs.db
 db.json
 *.log
 node_modules/
+public/
 .deploy*/
 .travis/ssh_key
 .travis/ssh_key.pub
+source/docs/*
