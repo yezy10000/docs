@@ -1,4 +1,4 @@
-home: /{lang}
-docs: /docs/{lang}
+home: /{language}
+docs: /docs/{language}
 news: /news/
 donate: /donate.html
