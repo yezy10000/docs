@@ -42,13 +42,12 @@ script:
   # - git subtree add --prefix=source/docs/en docs/en --squash
   # - git subtree add --prefix=source/docs/zh-cn docs/zh-cn --squash
   # Install dependencies
-  - mv -rf walle-web.io/* source/
+  - mv -f walle-web.io/* source/
   - npm install --no-optional
 
 after_script:
   - hexo generate && gulp
-  - cp -r public/docs/zh-cn/* public/docs/
-  - cp -r public/* .deploy_git/
+  - cp -rf public/* .deploy_git/
   - cd .deploy_git
   - git add -A
   - git commit -am "Auto deploy from Travis-CI."
