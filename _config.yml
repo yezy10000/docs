@@ -28,7 +28,7 @@ per_page: 0
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: easywechat
+theme: walle
 
 swiftype_key: URYXMYgtQuEhNHNY8d-F
 google_analytics: UA-64156348-1

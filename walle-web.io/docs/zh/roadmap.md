@@ -16,7 +16,7 @@ title: 路线图
 - 全新的支付模块
 - 多类型缓存系统
 - 新的命名空间：EasyWeChat
-- 专属网站与更清晰与文档：http://easywechat.org
+- 专属网站与更清晰与文档：http://walle.org
 
 ## 2.1
 

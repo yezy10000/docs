@@ -25,7 +25,7 @@ title: 快速开始
 
 考虑到这些，我已经把验证这一步给封装到 SDK 里了，你可以完全忽略这一步。
 
-下面我们来配置一个基本的服务端，这里假设我们自己的服务器域名叫 `easywechat.org`，我们在服务器上准备这么一个文件`server.php`:
+下面我们来配置一个基本的服务端，这里假设我们自己的服务器域名叫 `walle.org`，我们在服务器上准备这么一个文件`server.php`:
 
 // server.php
 
@@ -40,13 +40,13 @@ $options = [
     'debug'  => true,
     'app_id' => 'your-app-id',
     'secret' => 'you-secret',
-    'token'  => 'easywechat',
+    'token'  => 'walle',
 
     // 'aes_key' => null, // 可选
 
     'log' => [
         'level' => 'debug',
-        'file'  => '/tmp/easywechat.log', // XXX: 绝对路径！！！！
+        'file'  => '/tmp/walle.log', // XXX: 绝对路径！！！！
     ],
 
     //...
@@ -96,7 +96,7 @@ echo $response;
 
 OK, 有了上面的代码，那么请你按 **[微信官方的接入指引](http://mp.weixin.qq.com/wiki/17/2d4265491f12608cd170a95559800f2d.html)** 操作，并相应修改上面的 `$options` 的配置。
 
-> URL 就是我们的 `http://easywechat.org/server.php`，这里我是举例哦，你可不要填写我的域名。
+> URL 就是我们的 `http://walle.org/server.php`，这里我是举例哦，你可不要填写我的域名。
 
 这样，点击提交验证就OK了。
 
@@ -120,7 +120,7 @@ $app->server->serve()->send();
 
 好吧，打开你的微信客户端，向你的公众号发送任意一条消息，你应该会收到回复：`您好！欢迎关注我!`。
 
-> 没有收到回复？看到了“你的公众号暂时无法提供服务” ？， 好，那检查一下你的日志吧，日志在哪儿？我们的配置里写了日志路径了(`'/tmp/easywechat.log'`)。 没有这个文件？看看权限哦。
+> 没有收到回复？看到了“你的公众号暂时无法提供服务” ？， 好，那检查一下你的日志吧，日志在哪儿？我们的配置里写了日志路径了(`'/tmp/walle.log'`)。 没有这个文件？看看权限哦。
 
 一个基本的服务端验证就完成了。
 

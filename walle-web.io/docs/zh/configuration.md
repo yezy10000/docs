@@ -43,7 +43,7 @@ return [
      */
     'log' => [
         'level' => 'debug',
-        'file'  => '/tmp/easywechat.log',
+        'file'  => '/tmp/walle.log',
     ],
 
     /**
@@ -80,7 +80,7 @@ return [
 如果在 windows 下，去把它改成`C:\foo\bar`的形式，
 如查是 Linux ，你已经懂了……
 
-如查需要按日独立存储，可以配置成`'file'  => storage_path('/tmp/easywechat/easywechat_'.date('Ymd').'.log'),`
+如查需要按日独立存储，可以配置成`'file'  => storage_path('/tmp/walle/walle_'.date('Ymd').'.log'),`
 
 其它同理……
 

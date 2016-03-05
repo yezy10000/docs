@@ -28,8 +28,8 @@
   <meta name="msapplication-TileColor" content="#2f83cd">
   <meta name="msapplication-TileImage" content="{{ url_for('icon/mstile-144x144.png') }}">
   <!-- CSS -->
-  <!-- build:css build/css/easywechat.css -->
-  {{ css('css/easywechat') }}
+  <!-- build:css build/css/walle.css -->
+  {{ css('css/walle') }}
   <!-- endbuild -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <!-- RSS -->

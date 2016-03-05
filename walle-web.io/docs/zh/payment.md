@@ -253,7 +253,7 @@ $payment->report($api, $timeConsuming, $resultCode, $returnCode, [
 ## 转换短链接
 
 ```php
-$shortUrl = $payment->urlShorten('http://easywechat.org');
+$shortUrl = $payment->urlShorten('http://walle.org');
 ```
 
 ## 授权码查询OPENID接口
