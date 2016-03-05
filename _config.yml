@@ -15,7 +15,6 @@ timezone: PRC
 url: https://walle-web.io
 root: /
 
-source_dir: docs
 permalink: news/:year/:month/:day/:title/
 archive_dir: news
 code_dir: downloads/code
