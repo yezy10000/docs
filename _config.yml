@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Easy We Chat
+title: walle 瓦力 - 部署系统
 subtitle:
 description:
-author: overtrue
+author: wushuiyong@huamanshu.com
 language: zh-cn
 timezone: PRC
 
@@ -15,6 +15,7 @@ timezone: PRC
 url: https://walle-web.io
 root: /
 
+source_dir: docs
 permalink: news/:year/:month/:day/:title/
 archive_dir: news
 code_dir: downloads/code
