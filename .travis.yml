@@ -49,6 +49,8 @@ after_script:
   - hexo generate && gulp
   - cp -rf public/* .deploy_git/
   - cd .deploy_git
+  - git rm -r *
+  - git commit -am "remove"
   - git add -A
   - git commit -am "Auto deploy from Travis-CI."
   - git push --force
