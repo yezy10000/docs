@@ -2,9 +2,7 @@ title: walle 瓦力
 ---
 
 
-[![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://travis-ci.org/meolu/walle-web)
-[![Packagist](https://img.shields.io/packagist/v/meolu/walle-web.svg)](https://packagist.org/packages/meolu/walle-web)
-[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
+[![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://travis-ci.org/meolu/walle-web)[![Packagist](https://img.shields.io/packagist/v/meolu/walle-web.svg)](https://packagist.org/packages/meolu/walle-web)[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 
 
 
@@ -30,9 +28,13 @@ Walle 一个web部署系统工具，配置简单、功能完善、界面流畅�
 * 线上文件指纹确认
 * 支持git、svn版本管理
 
-目前，超过十家企业生产环境部署使用，欢迎star、fork、试用 ：）
+目前，接近上百家企业生产环境部署使用，欢迎star、fork、试用 ：）
 
 
-#### 演示
-![](./static/walle.gif)
+### 加入我们
+
+你有以下两种方式加入到我们中来，为广大开发者提供更优质的免费开源的服务：
+
+- **贡献代码**：我们的代码都在 [meolu/walle-web](https://github.com/meolu/walle-web) ，你可以提交 PR 到任何一个项目，当然，前提是代码质量必须是 OK 的。
+- **翻译或补充文档**：我们的文档在：[meolu/docs](https://github.com/meolu/docs/)，你可以选择补充文档或者参与英文文档的翻译，你可以提交对应的 PR 参与翻译工作。
 
