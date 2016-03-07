@@ -12,7 +12,6 @@
   <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
     {{ page_anchor(post.content) }}
 
-    <div class="donate-btn text-center"><a href="/donate.html" target="_blank">{{ __('page.donate') }}</a></div>
   </div>
   {{ partial('partial/comment') }}
 </article>

@@ -12,7 +12,6 @@
               <div class="article-content" itemprop="articleBody" data-swiftype-index="true">
                 {{ page_anchor(page.content) }}
 
-                <div class="donate-btn text-center"><a href="/donate.html" target="_blank">{{ __('page.donate') }}</a></div>
               </div>
               <footer class="article-footer">
                 <time class="article-footer-updated" datetime="{{ date_xml(page.updated) }}" itemprop="dateModified">{{ __('page.last_updated', date(page.updated)) }}</time>

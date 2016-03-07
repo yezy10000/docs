@@ -99,7 +99,8 @@ hexo.extend.helper.register('url_for_lang', function(path){
 
 hexo.extend.helper.register('raw_link', function(path){
   console.log('raw'+path);
-  path = this.page.lang + '/' + path.replace(/master\/walle-web.io\/docs\/((zh\-cn|en)\/)?/, '');
+  //path = this.page.lang + '/' + path.replace(/master\/walle-web.io\/docs\/((zh\-cn|en)\/)?/, '');
+  path = path.replace(/master\/walle-web.io\/docs\/((zh\-cn|en)\/)?/, '');
 
   return 'https://github.com/meolu/docs/edit/' + path.replace('//', '/');
 });
