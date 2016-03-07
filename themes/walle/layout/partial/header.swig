@@ -1,7 +1,7 @@
 <header id="header" class="wrapper">
   <div id="header-inner" class="inner">
     <h1 id="logo-wrap">
-      <a href="{{ url_for_lang('') }}" id="logo">EasyWeChat</a>
+      <a href="{{ url_for_lang('') }}" id="logo">Walle</a>
     </h1>
     <nav id="main-nav">
       <ul>
