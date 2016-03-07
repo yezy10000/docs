@@ -5,6 +5,7 @@ docs:
     architecture: architecture.html
     dependency: dependency.html
     installation: installation.html
+    upgrade: upgrade.html
     install_error: install-error.html
   configuration:
     git_configuration: git-configuration.html
