@@ -2,10 +2,9 @@ menu:
   home: 首页
   docs: 文档
   news: 动态
-  donate: 打赏
 
 index:
-  get_started: 开始使用
+  get_started: 快速开始
 
 page:
   contents: 目录
@@ -18,41 +17,26 @@ page:
 
 sidebar:
   docs:
-    getting_started: 开始使用
-    tutorial:  小教程
+    getting_started: 快速开始
     overview: 概述
-    setup: 入门
+    architecture: 原理分析
+    dependency: 依赖
     installation: 安装
-    integration: 在框架中使用
-    releases: 更新日志
-    roadmap: 路线图
-    accounts: 账号接入
-    payment: 支付
-    lucky_money: 红包
-    broadcast: 群发消息
-    configuration: 配置
-    basic_usage: 基本使用
-    miscellaneous: 其他
+    install_error: 安装错误
+    configuration: 配置项目
+    git_configuration: Git项目配置
+    svn_configuration: Svn项目配置
+    task_configuration: 高级任务配置
+    user_configuration: 项目用户配置
+    configuration_error: 检测错误
+    getting_deploy: 上线使用
+    submit_bill: 提交上线单
+    deploying: 部署上线
+    deploy_error: 部署出错
+    customization: 自定义
+    local: 各种自定义
+    miscellaneous: 其它
     troubleshooting: 问题解答
     contributing: 贡献
-    customization: 自定义
-    server: 服务端
-    menu: 菜单
-    user: 用户
-    user_group: 用户组
-    cache: 缓存
-    oauth: 网页授权
-    messages: 消息
-    events: 事件
-    material: 素材管理
-    card: 卡券
-    store: 小店
-    poi: 门店
-    staff: 客服
-    js: JSSDK
-    anaylsis: 数据统计与分析
-    notice: 模板消息
-    qrcode: 二维码
-    short_url: 短网址
-    semantic: 语义理解
-    reply: 自动回复
+    releases: 更新日志
+

@@ -2,38 +2,23 @@ docs:
 
   getting_started:
     overview: index.html
+    architecture: architecture.html
+    dependency: dependency.html
     installation: installation.html
-    tutorial: tutorial.html
-    configuration: configuration.html
-    integration: integration.html
-  basic_usage:
-    server: server.html
-    messages: messages.html
-    events: events.html
-    broadcast: broadcast.html
-    notice: notice.html
-    user: user.html
-    user_group: user-group.html
-    oauth: oauth.html
-    material: material.html
-    menu: menu.html
-    js: js.html
-    payment: payment.html
-    lucky_money: lucky-money.html
-    card: card.html
-    store: store.html
-    poi: poi.html
-    staff: staff.html
-    anaylsis: anaylsis.html
-    qrcode: qrcode.html
-    short_url: short-url.html
-    semantic: semantic.html
-    reply: reply.html
+    install_error: install-error.html
+  configuration:
+    git_configuration: git-configuration.html
+    svn_configuration: svn-configuration.html
+    task_configuration: task-configuration.html
+    user_configuration: user-configuration.html
+    configuration_error: configuration-error.html
+  getting_deploy:
+    submit_bill: submit-bill.html
+    deploying: deploying.html
+    deploy_error: deploy-error.html
   customization:
-    errors: errors.html
-    cache: cache.html
+    local: local.html
   miscellaneous:
     troubleshooting: troubleshooting.html
     contributing: contributing.html
     releases: releases.html
-    roadmap: roadmap.html
