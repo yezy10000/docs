@@ -1,6 +1,6 @@
 title: walle-web 瓦力
 ---
-
+![logo](static/logo.jpg)
 ## 瓦力 walle-web 是什么？
 
 Walle-web 是一个开源的 [微信](https://walle-web.io) 上线部署系统。
