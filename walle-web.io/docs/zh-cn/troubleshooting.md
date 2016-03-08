@@ -10,6 +10,7 @@ title: 问题解答
 - 熟悉 PHP 常见的知识：composer 的使用
 - 了解基本的 HTTP 协议，Header 头、请求方式（GET\POST\PUT\PATCH\DELETE）等
 - 基本的 Debug 技能，查看 php_error 日志，nginx 4xx 5xx日志等
+- 基于上一条，40x、50x错误，一律不回答，请按[最详细nginx php配置](installation.html)一一检查。
 
 如果你不具备这些知识，请不要使用，因为这是开源项目，没有义务每天帮你解决一些常识性的问题，毕竟我们都要工作。
 
@@ -18,114 +19,6 @@ title: 问题解答
 
 
 最后，请 **不要在QQ单独找我提问**，除非你是企业身份或者服务费。
-
-### composer安装速度慢
-
-好吧，我已经猜到会有人问有没有现成的，有！
-
-下载[百度网盘](http://pan.baidu.com/s/1c0wiuyc)，解压vendor放到walle-web根目录即可。
-
-
-### 第一次使用composer可能会出现的问题：1 没有添加git的token
-
->Could not fetch https://api.github.com/repos/jquery/jquery, please create a GitHub OAuth token to go over the API rate limit
-Head to https://github.com/settings/tokens/new?scopes=repo&description=Composer+on+localhost+2015-10-08+1123
-to retrieve a token. It will be stored in "/root/.composer/auth.json" for future use by Composer.
-Token (hidden):
-
-**解决办法：**
-
-* 复制提示里的地址到浏览器，点击生成git token，如上面的：https://github.com/settings/tokens/new?scopes=repo&description=Composer+on+localhost+2015-10-08+1123
-* 复制token到命令行，认证，继续
-
-### 第一次使用composer可能会出现的问题：2 composer install 可能会出现的错误
-
->Loading composer repositories with package information
-Installing dependencies (including require-dev)
-Your requirements could not be resolved to an installable set of packages.
->
->  Problem 1
->    - yiisoft/yii2 2.0.x-dev requires bower-asset/jquery 2.1.*@stable | 1.11.*@stable -> no matching package found.
-> ....
-
-**解决办法**：`composer global require "fxp/composer-asset-plugin:*"`
-
-### 如何添加用户key到git的ssh-keys列表
--------------------------------
-```
-su - www                 # 假如www为你的php进程用户
-ssh-keygen -t rsa        # 如果你都没有生成过rsa_key的话
-cat ~/.ssh/id_rsa.pub    # 复制
-打开github/gitlab添加到你的ssh-keys或者deploy-keys里
-```
-
-### 如何添加用户ssh-key到目标机群部署用户ssh-key信任
-**宿主机操作**
-```
-ps aux|grep php          # 假如www_php为你的php进程用户
-su - www_php             # 切换用户
-ssh-keygen -t rsa        # 如果你都没有生成过rsa_key的话，如果有则跳过
-ssh-copy-id -i ~/.ssh/id_rsa.pub www_remote@remote_host  # 加入目标机群信任，需要输入www_remote密码
-```
-
-### 初始化walle时失败：could not find driver
-
-缺少pdo扩展，解决办法：添加pdo扩展
-```
-ubuntu
-apt-get install php5 php5-fpm php5-mysql
-
-或者在源码包里编译
-cd php-src/ext/pdo_mysql
-phpize
-./configure --with-php-config=/php/install/dir/bin/php-config
-make && make install
-vi php.ini # 添加pdo_mysql.so
-restart php-fpm
-```
-
-### nginx简单配置
-```
-server {
-    listen       80;
-    server_name  walle.company.com; # 改你的host
-    root /the/dir/of/walle-web/web; # 根目录为web
-    index index.php;
-
-    # 建议放内网
-    allow 192.168.0.0/24;
-    deny all;
-
-    location / {
-        try_files $uri $uri/ /index.php$is_args$args;
-    }
-
-    location ~ \.php$ {
-        try_files $uri =404;
-        fastcgi_pass   127.0.0.1:9000;
-        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-        include        fastcgi_params;
-    }
-}
-```
-
-
-### 切换用户（www）时：this account is currently not available
-
-```
-cat /etc/passwd | grep www # 查看是否为 /sbin/nolgin
-```
-
-解决办法：
-```
-vipw /etc/passwd
-修改/sbin/nolgin为/bin/bash
-```
-
-### `The file or directory to be published does not exists: /data/www/walle-web/vendor/bower/jquery/dist`
-
-新建此目录即可：`/data/www/walle-web/vendor/bower/jquery/dist`
-
 ### 检测、上线出错
 
 检测、上线出错，想知道到底发生了什么事情？我能告诉你的就是，有些错误walle捕捉不到，默认操作日志在`/tmp/walle/`下，具体可在`config/local.php`里`log.dir`配置路径，`tail -f /tmp/walle/walle-YYYYmmdd.log`着日志，部署看日志。**一切检测、上线的错误均可被发现和解决。**
@@ -176,6 +69,114 @@ vipw /etc/passwd
 原因分析：更新目标机群是以软链方式来更新webroot，如果提前在目标机群创建了webroot目录，软链覆盖将会失败。
 
 解决办法：直接删除目标机群webroot目录: `rm -rf /d/e/f`，确定其父目录有读写的权限即可，由瓦力系统生成webroot软链接。
+
+### 初始化walle时失败：could not find driver
+
+缺少pdo扩展，解决办法：添加pdo扩展
+```
+ubuntu
+apt-get install php5 php5-fpm php5-mysql
+
+或者在源码包里编译
+cd php-src/ext/pdo_mysql
+phpize
+./configure --with-php-config=/php/install/dir/bin/php-config
+make && make install
+vi php.ini # 添加pdo_mysql.so
+restart php-fpm
+```
+
+### composer安装速度慢
+
+好吧，我已经猜到会有人问有没有现成的，有！
+
+下载[百度网盘](http://pan.baidu.com/s/1c0wiuyc)，解压vendor放到walle-web根目录即可。
+
+
+### 第一次使用composer可能会出现的问题：1 没有添加git的token
+
+>Could not fetch https://api.github.com/repos/jquery/jquery, please create a GitHub OAuth token to go over the API rate limit
+Head to https://github.com/settings/tokens/new?scopes=repo&description=Composer+on+localhost+2015-10-08+1123
+to retrieve a token. It will be stored in "/root/.composer/auth.json" for future use by Composer.
+Token (hidden):
+
+**解决办法：**
+
+* 复制提示里的地址到浏览器，点击生成git token，如上面的：https://github.com/settings/tokens/new?scopes=repo&description=Composer+on+localhost+2015-10-08+1123
+* 复制token到命令行，认证，继续
+
+### 第一次使用composer可能会出现的问题：2 composer install 可能会出现的错误
+
+>Loading composer repositories with package information
+Installing dependencies (including require-dev)
+Your requirements could not be resolved to an installable set of packages.
+>
+>  Problem 1
+>    - yiisoft/yii2 2.0.x-dev requires bower-asset/jquery 2.1.*@stable | 1.11.*@stable -> no matching package found.
+> ....
+
+**解决办法**：`composer global require "fxp/composer-asset-plugin:*"`
+
+### 如何添加用户key到git的ssh-keys列表
+-------------------------------
+```
+su - www                 # 假如www为你的php进程用户
+ssh-keygen -t rsa        # 如果你都没有生成过rsa_key的话
+cat ~/.ssh/id_rsa.pub    # 复制
+打开github/gitlab添加到你的ssh-keys或者deploy-keys里
+```
+
+### 如何添加用户ssh-key到目标机群部署用户ssh-key信任
+**宿主机操作**
+```
+ps aux|grep php          # 假如www_php为你的php进程用户
+su - www_php             # 切换用户
+ssh-keygen -t rsa        # 如果你都没有生成过rsa_key的话，如果有则跳过
+ssh-copy-id -i ~/.ssh/id_rsa.pub www_remote@remote_host  # 加入目标机群信任，需要输入www_remote密码
+```
+
+
+### nginx简单配置
+```
+server {
+    listen       80;
+    server_name  walle.company.com; # 改你的host
+    root /the/dir/of/walle-web/web; # 根目录为web
+    index index.php;
+
+    # 建议放内网
+    allow 192.168.0.0/24;
+    deny all;
+
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+}
+```
+
+
+### 切换用户（www）时：this account is currently not available
+
+```
+cat /etc/passwd | grep www # 查看是否为 /sbin/nolgin
+```
+
+解决办法：
+```
+vipw /etc/passwd
+修改/sbin/nolgin为/bin/bash
+```
+
+### `The file or directory to be published does not exists: /data/www/walle-web/vendor/bower/jquery/dist`
+
+新建此目录即可：`/data/www/walle-web/vendor/bower/jquery/dist`
 
 
 ### `/tmp/walle`下无日志文件
