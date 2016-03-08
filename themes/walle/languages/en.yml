@@ -1,9 +1,7 @@
 menu:
   home: Home
   docs: Docs
-  2docs: Docs(2.x)
   news: News
-  donate: Donate
 
 index:
   get_started: Get started
@@ -21,39 +19,20 @@ sidebar:
   docs:
     getting_started: Getting Started
     overview: Overview
-    setup: Setup
-    tutorial: Tutorial
+    architecture: Architecture
+    dependency: Dependency
     installation: Installation
-    integration: Integration
-    releases: Releases Notes
-    roadmap: Roadmap
-    accounts: accounts
-    payment: Payment
-    lucky_money: Lucky Money
-    broadcast: Broadcast
-    configuration: Configuration
-    basic_usage: Basic Usage
-    miscellaneous: Miscellaneous
-    troubleshooting: Troubleshooting
-    contributing: Contributing
-    customization: Customization
-    server: Server
-    menu: Menu
-    user: User
-    user_group: User Group
-    cache: Cache
-    oauth: Oauth
-    messages: Messages
-    events: Events
-    material: Materials
-    card: Card
-    store: Store
-    poi: POI
-    staff: Staff
-    js: Javascript
-    anaylsis: Anaylsis
-    notice: Notice
-    qrcode: Qrcode
-    short_url: Short Url
-    semantic: Semantic
-    reply: Auto Reply
+    upgrade: Upgrade
+    install_error: Unstall Error
+    configuration: Project Configuration
+    git_configuration: Git Configuration
+    svn_configuration: svn Configuration
+    task_configuration: Task Configuration
+    user_configuration: User Configuration
+    configuration_error: Configuration Error
+    getting_deploy: Getting Deploy
+    submit_bill: Submit Bill
+    deploying: Deploying
+    deploy_error: Deploy Error
+    troubleshooting: FQA
+
