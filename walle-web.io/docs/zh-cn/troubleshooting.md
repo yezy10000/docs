@@ -15,7 +15,7 @@ title: 问题解答
 如果你不具备这些知识，请不要使用，因为这是开源项目，没有义务每天帮你解决一些常识性的问题，毕竟我们都要工作。
 
 
-我们能保证你提的问题，90%可能都在常见错误列表里给列出来了，或者是太低级的问题。所以发问之前先看完所有错误列表（Ctr + F），如果没有带上你的代码，去群：482939318里发个问题，重现流程，大家有空的会帮忙你解答。谢谢合作！:pray:
+我们能保证你提的问题，90%可能都在常见错误列表里给列出来了，或者是太低级的问题。所以发问之前先看完所有错误列表（Ctr + F），如果没有，带上你的代码，去群：482939318里发个问题，重现流程，大家有空的会帮忙你解答。谢谢合作！:pray:
 
 
 最后，请 **不要在QQ单独找我提问**，除非你是企业身份或者服务费。
@@ -191,3 +191,16 @@ PrivateTmp=false
 systemctl daemon-reload
 systemctl reload php-fpm
 ```
+
+Call to undefined function yii\web\mb_parse_str()
+------------------------------
+
+缺少mbstring扩展，安装mbstring扩展重启php即可。mbstring扩展：http://php.net/manual/zh/mbstring.installation.php
+
+项目中有配置文件解决方案
+--------------------
+
+- config-production 和 config-development 都提交到git仓库。这会存在一些小问题，比如数据库密码会让所有开发人员知道。你需要把数据库藏在服务器内网里，只能通过 ssh 跳板机登录，不给其他开发人员跳板机权限，知道数据库密码也没用。
+    - Config::get 类读取配置时，根据 Apache/php-fpm 里面置入的 env 环境变量，判断是生产环境还是开发环境。
+    - 在各环境部署项目的高级任务post-deploy里写相应的`mv config-production config`或者`mv config-development config`，代码直接读取`config`。
+- 整理所有config有关多种环境的差异，其实并不多。大多数配置生产环境和开发环境都是一样的，只有数据库地址、缓存地址、API Secret 这些敏感信息有点不一样，这种不一样的单独放一个配置文件，放在webroot以外，软链一下就好。
