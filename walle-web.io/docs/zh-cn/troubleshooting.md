@@ -64,7 +64,7 @@ title: 问题解答
         chown {remote_user} -R {path}
         chmod 755 -R {path}
         ```
-### 上线至全量更新服务器时出错：`mv -fT /a/b/c /d/e/f`
+### 上线至全量更新服务器时出错：`mv: 无法以非目录来覆盖目录 -fT /a/b/c /d/e/f`
 
 原因分析：更新目标机群是以软链方式来更新webroot，如果提前在目标机群创建了webroot目录，软链覆盖将会失败。
 
