@@ -31,6 +31,7 @@ before_install:
   - git config --global user.name "meolu"
   - git config --global user.email "wushuiyong@huamanshu.com"
   - git config --global push.default simple
+  - rm -rf $HOME/.node-gyp
 
 script:
   # Clone the repository
@@ -43,7 +44,6 @@ script:
   # - git subtree add --prefix=source/docs/zh-cn docs/zh-cn --squash
   # Install dependencies
   - mv -f walle-web.io/* source/
-  - rm -rf $HOME/.node-gyp
   - npm install --no-optional
 
 after_script:
