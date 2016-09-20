@@ -43,6 +43,7 @@ script:
   # - git subtree add --prefix=source/docs/zh-cn docs/zh-cn --squash
   # Install dependencies
   - mv -f walle-web.io/* source/
+  - rm -rf $HOME/.node-gyp
   - npm install --no-optional
 
 after_script:
