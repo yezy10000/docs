@@ -32,6 +32,11 @@ before_install:
   - git config --global user.email "wushuiyong@huamanshu.com"
   - git config --global push.default simple
   - rm -rf $HOME/.node-gyp
+  - sudo npm cache clean -f
+  - sudo npm install -g n
+  - sudo n 4.4.5
+  - sudo npm install npm -g
+  - sudo npm uninstall node-gyp -g
 
 script:
   # Clone the repository
