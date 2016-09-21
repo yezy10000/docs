@@ -36,6 +36,7 @@ before_install:
   - npm cache clean -f
   - npm install npm -g
   - npm uninstall node-gyp -g
+  - npm install sharp --save
 
 script:
   # Clone the repository
