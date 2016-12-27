@@ -45,6 +45,7 @@ pip install ansible # will also install  paramiko PyYAML jinja2
     rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
     CentOs 7.X
     rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
+    rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
     ```
 
 - 安装php 5.6相关组件
